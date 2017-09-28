@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAppDemoSite-$scope">
+
+<head>
+    <title>DemoAngularJS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid ">
+            <div class="navbar-header ">
+                <a class="navbar-brand" href="#" style="color:gold">DemoAngularJS</a>
+            </div>
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" style="color:blue">Home</a></li>
+                <li><a href="#" style="color:gold">Page1</a></li>
+                <li><a href="#" style="color:gold">Page2</a></li>
+                <li><a href="#" style="color:gold">Page3</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+
+                <li ng-controller="ModalDemoCtrl" class="modal-demo">
+                    <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button>
+
+                    <script type="text/ng-template" id="myModalContent.html">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-label="Close" ng-click="cancel()">
+            <span aria-hidden="true">&times;</span>
+                </button>
+
+                            <h3 class="modal-title" id="modal-title">Register please!</h3>
+                        </div>
+                        <div class="modal-body" id="modal-body">
+
+                            <form class="form-horizontal" name="regForm" ng-submit="ok()" novalidate>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="regName">Name:</label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" name="regName" ng-model="regName" ng-minlength='5' ng-maxlength='20' required placeholder='Write your name here'>
+                                        <span ng-show="regForm.regName.$touched && regForm.regName.$invalid" style="color:red">The name for registration is required!</span>
+                                        <span ng-show="regForm.regName.$error.minlength" class="help-block">Username is too short.</span>
+                                        <span ng-show="regForm.regName.$error.maxlength" class="help-block">Username is too long.</span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="regSurname">Surname: </label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="text" name="regSurname" ng-model="regSurname" ng-minlength='5' ng-maxlength='20' required
+                                            placeholder='Write your surname here'>
+                                        <span ng-show="regForm.regSurname.$touched && regForm.regSurname.$invalid" style="color:red">The surname for registration is required!</span>
+                                        <span ng-show="regForm.regSurname.$error.minlength" class="help-block">Username is too short.</span>
+                                        <span ng-show="regForm.regSurname.$error.maxlength" class="help-block">Username is too long.</span>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="regPhone">Phone number:</label>
+                                    <div class="col-sm-9">
+                                        <select ng-model="regPhone"> 
+                                            <!--ng-options="code for code in codes">-->
+                                            <!--<option ng-repeat="code in codes">{{code}}</option>-->
+                                          <!--Не працює selected!  -->
+                                        <option value="+(380)" selected>+(380)</option>
+                                        <option value="+(375)">+(375)</option>
+                                        <option value="+(48)">+(48)</option>
+                                         </select>
+                                        
+                                        <input type="number" name="regPhone" value=""> 
+                                        <!--В Мозілі в input type="number"пишуться літери, в гуглі і в опері не пишуться!!-->
+                                        <span ng-switch="regPhone">
+                                             <span ng-switch-when="+(380)">Слава Україні!</span> 
+                                             <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
+                                             <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
+                                        </span>
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="regEmail">Email: </label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="email" name="regEmail" ng-model="regEmail" required placeholder='Write your email here'>
+                                        <span ng-show="regForm.regEmail.$touched && regForm.regEmail.$invalid" style="color:red">Your email for registration is required!</span>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="regPass">Password: </label>
+                                    <div class="col-sm-9">
+                                        <input class="form-control" type="password" name="regPass" ng-model="regPass" required value="" placeholder='Write your password here'>
+                                        <span ng-show="regForm.regPass.$touched && regForm.regPass.$invalid" style="color:red">Enter password for registration is required!</span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit" ng-disabled="regForm.$invalid">Submit</button>
+                                    <!--<button class="btn btn-primary" type="submit"  ng-disabled="regForm.$invalid" ng-click="ok()">Submit</button>-->
+
+                                    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </script>
+                </li>
+                <li> <button type="button" class="btn btn-primary btn-sm navbar-btn">Log in</button></li>
+                <li> <button type="button" class="btn btn-danger btn-sm navbar-btn">Log out</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Lerning Site from Oleg Suchariev.</h1>
+
+    <p>This is my first site</p>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="module-$scope.js"></script>
+
+</body>
+<!---->
+</html>

@@ -1,0 +1,19 @@
+
+.container-fluid{
+    background-color:purple;
+}
+.form-group .col-sm-9 .help-block{
+    color:lawngreen;
+}
+/*нижчеприведений сніпет(10-16) дозволяє прибрати стрілочки в полі input type="number",
+ в модальному вікні при введенні номеру телефону вони зайві і недоречні*/
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

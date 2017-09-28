@@ -1,0 +1,7 @@
+{
+  "name": "DemoSiteAngularJS",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.5.0"
+  }
+}
