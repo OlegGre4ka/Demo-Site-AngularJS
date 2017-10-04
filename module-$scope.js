@@ -75,5 +75,40 @@ $scope.toggleAnimation = function () {
     $uibModalInstance.dismiss('cancel');
   };
 })
-
+.controller('PaintingTableCtrl',function ($scope) {
+  $scope.paintings=[
+    {
+      "number": 1,
+      "name":{
+        "foto":"foto/Blakytna_perlyna_Vsesvitu.jpg",
+        "title":"Блакитна Перлина Всесвіту"
+      },
+      "home":"Лувр(Париж,Франція)",
+    },
+    {
+      "number": 2,
+      "name":{
+        "foto":"foto/Angely.jpg",
+        "title":"Ангели"
+      },
+      "home":"Національний Музей(Київ,Україна)",
+    },
+    {
+      "number": 3,
+      "name":{
+        "foto":"foto/Velyke_Dyvo_Vsesvitu.jpg",
+        "title":"Велике Диво Всесвіту"
+      },
+      "home":"Приватна колекція Віри Бондар(Київ,Україна)",
+    },
+    {
+      "number": 4,
+      "name":{
+        "foto":"foto/Znamennya.jpg",
+        "title":"Знамення.Імени Божі."
+      },
+      "home":"Музей Ватикану(Рим,Італія)",
+    },
+  ]
+})
 

@@ -77,15 +77,15 @@
                                         <option value="+(375)">+(375)</option>
                                         <option value="+(48)">+(48)</option>
                                          </select>
-                                        
-                                        <input type="number" name="regPhone" value=""> 
+
+                                        <input type="number" name="regPhone" value="">
                                         <!--В Мозілі в input type="number"пишуться літери, в гуглі і в опері не пишуться!!-->
                                         <span ng-switch="regPhone">
-                                             <span ng-switch-when="+(380)">Слава Україні!</span> 
-                                             <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
-                                             <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
+                                             <span ng-switch-when="+(380)">Слава Україні!</span>
+                                        <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
+                                        <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
                                         </span>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -121,13 +121,31 @@
         </div>
     </nav>
 
-    <h1>Lerning Site from Oleg Suchariev.</h1>
+    <h1>Learning Site from Oleg Suchariev.</h1>
 
     <p>This is my first site</p>
+    <div ng-controller="PaintingTableCtrl">
+
+        <table >
+            <caption>
+                <h2>Енкаустика.Загадка Всесвіту</h2>
+            </caption>
+                <tr>
+                    <th>№</th>
+                    <th>Назва картини</th>
+                    <th>Місце знаходження</th>
+                </tr>
+                <tr ng-repeat="painting in paintings">
+                    <td>{{painting.number}}</td>
+                    <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
+                    <td>{{painting.home}}</td>
+                </tr>
+        </table>
+    </div>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="module-$scope.js"></script>
 
 </body>
-<!---->
+
 </html>
