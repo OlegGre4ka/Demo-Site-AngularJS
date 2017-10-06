@@ -16,19 +16,20 @@
 
 <body>
     <nav class="navbar navbar-default">
-        <div class="container-fluid ">
+        <div  class="container-fluid ">
             <div class="navbar-header ">
                 <a class="navbar-brand" href="#" style="color:gold">DemoAngularJS</a>
             </div>
 
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#" style="color:blue">Home</a></li>
-                <li><a href="#" style="color:gold">Page1</a></li>
+                <li>
+                    <a href="chat.html" style="color:gold">Чат</a>
+                </li>
                 <li><a href="#" style="color:gold">Page2</a></li>
                 <li><a href="#" style="color:gold">Page3</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
 
                 <li ng-controller="ModalDemoCtrl" class="modal-demo">
                     <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button>
@@ -58,8 +59,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-3" for="regSurname">Surname: </label>
                                     <div class="col-sm-9">
-                                        <input class="form-control" type="text" name="regSurname" ng-model="regSurname" ng-minlength='5' ng-maxlength='20' required
-                                            placeholder='Write your surname here'>
+                                        <input class="form-control" type="text" name="regSurname" ng-model="regSurname" ng-minlength='5' ng-maxlength='20' required placeholder='Write your surname here'>
                                         <span ng-show="regForm.regSurname.$touched && regForm.regSurname.$invalid" style="color:red">The surname for registration is required!</span>
                                         <span ng-show="regForm.regSurname.$error.minlength" class="help-block">Username is too short.</span>
                                         <span ng-show="regForm.regSurname.$error.maxlength" class="help-block">Username is too long.</span>
@@ -116,30 +116,30 @@
                     </script>
                 </li>
                 <li> <button type="button" class="btn btn-primary btn-sm navbar-btn">Log in</button></li>
-                <li> <button type="button" class="btn btn-danger btn-sm navbar-btn">Log out</button></li>
+                <li> <button type="button" class="btn btn-danger btn-sm navbar-btn" ng-if="regForm.$invalid">Log out</button></li>
             </ul>
         </div>
     </nav>
-
     <h1>Learning Site from Oleg Suchariev.</h1>
-
-    <p>This is my first site</p>
+    <p> <i> This is my first site</i></p>
+<h3>Вітаю! На цій першій сторінці можна ознайомитись з художньою творчістю мого батька -Сухарєва Євгена Васильовича<br></h3>
+<h4>А ось щоб потрапити до нашого чату Вам потрібно зареєструватись - кнопка <b>REG</b></h4>
     <div ng-controller="PaintingTableCtrl">
 
-        <table >
+        <table>
             <caption>
                 <h2>Енкаустика.Загадка Всесвіту</h2>
             </caption>
-                <tr>
-                    <th>№</th>
-                    <th>Назва картини</th>
-                    <th>Місце знаходження</th>
-                </tr>
-                <tr ng-repeat="painting in paintings">
-                    <td>{{painting.number}}</td>
-                    <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
-                    <td>{{painting.home}}</td>
-                </tr>
+            <tr>
+                <th>№</th>
+                <th>Назва картини</th>
+                <th>Місце знаходження</th>
+            </tr>
+            <tr ng-repeat="painting in paintings">
+                <td>{{painting.number}}</td>
+                <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
+                <td>{{painting.home}}</td>
+            </tr>
         </table>
     </div>
 

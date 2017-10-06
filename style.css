@@ -5,6 +5,12 @@
 .form-group .col-sm-9 .help-block{
     color:lawngreen;
 }
+.modal-header{
+    background-color: yellowgreen;
+}
+#modal-title{
+    color:green;
+}
 /*нижчеприведений сніпет(10-16) дозволяє прибрати стрілочки в полі input type="number",
  в модальному вікні при введенні номеру телефону вони зайві і недоречні*/
 
