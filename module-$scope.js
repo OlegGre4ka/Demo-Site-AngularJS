@@ -111,4 +111,12 @@ $scope.toggleAnimation = function () {
     },
   ]
 })
-
+.directive('confirmRegchat',function () {
+  return{
+    link:function (scope,element,attrs) {
+    console.log('confirmRegchat directive working!!'),
+    confirm('Щоб мати змогу користуватись нашим чатом - зареєструйтесь (кнопка REG),'+
+    "а якщо ви зареєстровані введіть Логін і Пароль(кнопка Log in) - і...Шалом, чатери! Что новенького на Плюке?")
+    }
+  }
+})
