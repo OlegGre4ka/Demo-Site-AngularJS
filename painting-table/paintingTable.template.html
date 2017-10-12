@@ -1,0 +1,17 @@
+<div>
+    <table>
+        <caption>
+            <h2>Енкаустика.Загадка Всесвіту</h2>
+        </caption>
+        <tr>
+            <th>№</th>
+            <th>Назва картини</th>
+            <th>Місце знаходження</th>
+        </tr>
+        <tr ng-repeat="painting in $ctrl.paintings">
+            <td>{{painting.number}}</td>
+            <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
+            <td>{{painting.home}}</td>
+        </tr>
+    </table>
+</div>

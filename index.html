@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myDemoApp">
+
+<head>
+    <title>DemoAngularJS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script src="main.module.js"></script>
+    <!-- Пока не виходить підключити компонент як окремий модуль -->
+    <!-- <script src="painting-table/paintingTable.component.js"></script> -->
+    <!-- <script src="painting-table/paintingTable.module.js"></script> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid ">
+            <div class="navbar-header ">
+                <a class="navbar-brand" href="#" style="color:gold">DemoAngularJS</a>
+            </div>
+
+            <ul class="nav navbar-nav" ng-controller="MenuCtrl">
+                <li class="active">
+                    <a href="index.html" style="color:blue">Home</a>
+                </li>
+                <li><a href="chat.html" ng-click="confirmRegchat()" style="color:gold">Чат</a></li>
+                <li><a href="#" style="color:gold">Page2</a></li>
+                <li><a href="#" style="color:gold">Page3</a></li>
+            </ul>
+            <div ng-include="'./navbar-btn.html'"></div>
+
+        </div>
+    </nav>
+    <div>
+   
+</div>
+    <h1>Learning Site from Oleg Suchariev.</h1>
+    <p> <i> This is my first site</i></p>
+    <h2>Вітаю! На цій першій сторінці можна ознайомитись з художньою творчістю мого батька -Сухарєва Євгена Васильовича<br></h2>
+    <h4>А ось щоб потрапити до нашого чату Вам потрібно зареєструватись - кнопка <b>REG</b></h4>
+
+    <h3 style="color:orangered"> This Painting Table built on ng-controller and HTML-template on view page:</h3>
+
+    <div ng-controller="PaintingTableCtrl">
+
+        <table>
+            <caption>
+                <h2>Енкаустика.Загадка Всесвіту</h2>
+            </caption>
+            <tr>
+                <th>№</th>
+                <th>Назва картини</th>
+                <th>Місце знаходження</th>
+            </tr>
+            <tr ng-repeat="painting in paintings">
+                <td>{{painting.number}}</td>
+                <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
+                <td>{{painting.home}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3 style="color:#4400FF"> This Painting Table built on component():</h3>
+   
+    <painting-table></painting-table>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
