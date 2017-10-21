@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myDemoApp">
+<html lang="en" ng-app="myApp">
 
 <head>
     <title>DemoAngularJS</title>
@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <script src="main.module.js"></script>
-    <!-- Пока не виходить підключити компонент як окремий модуль -->
-    <!-- <script src="painting-table/paintingTable.component.js"></script> -->
     <!-- <script src="painting-table/paintingTable.module.js"></script> -->
-
+<!-- Увага!! Модулі мають підключатись в порядку відпрацьовування функціоналу!!!Інакше нічого не буде!!!     -->
+    <!-- <script src="painting-table/paintingTable.component.js"></script> -->
+    
 </head>
 
 <body>
@@ -48,7 +48,7 @@
     <h3 style="color:orangered"> This Painting Table built on ng-controller and HTML-template on view page:</h3>
 
     <div ng-controller="PaintingTableCtrl">
-
+      
         <table>
             <caption>
                 <h2>Енкаустика.Загадка Всесвіту</h2>
