@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <script src="main.module.js"></script>
-
+    <!-- модуль компонента "painting-table" обовязково потрібно підключити на цю сторінку,
+        незважаючи на те щофункціонально він тут не виконує ніяких дій, інакше Angular не працюватиме -->
+    <script src="painting-table/paintingTable.module.js"></script>
+    <!-- <script src="painting-table/paintingTable.component.js"></script> -->
+    
 </head>
 
 <body>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
+module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTable'])
 // 'paintingTable' - підключити в []коли буду виносити в окремий модуль
   // Другим аргументом в модулі ми передаємо масив залежностей:[angular-animate.js - 'ngAnimate',angular-sanitize.js-'ngSanitise' ,angular-ui-bootstrap - 'ui.bootstrap']
 
@@ -163,66 +163,64 @@ module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap'])
       $uibModalInstance.dismiss('cancel');
     };
   })
-  // якщо винести component'paintingTable' в окрему папку зі своїм компонентом, модулем і шаблоном
-  // і підключити в цей основний модуль як залежність -перестає працювати ангуляр на інших сторінках
-  // зокрема на сторінці chat.html, до якої також підключений цей модуль
-.component('paintingTable',
-{
-  template:'<div>'+
-  '<table>'+
-      '<caption>'+
-          '<h2>Енкаустика.Загадка Всесвіту</h2>'+
-      '</caption>'+
-      '<tr>'+
-          '<th>№</th>'+
-          '<th>Назва картини</th>'+
-          '<th>Місце знаходження</th>'+
-      '</tr>'+
-      '<tr ng-repeat="painting in $ctrl.paintings">'+
-          '<td>{{painting.number}}</td>'+
-          '<td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>'+
-          '<td>{{painting.home}}</td>'+
-      '</tr>'+
-  '</table>'+
-'</div>',
-controller: function PaintingTableController() {
+  // компонент закоментовано, бо винесено в окремий модуль 'paintingTable', потім видалю
+// .component('paintingTable',
+// {
+//   template:'<div>'+
+//   '<table>'+
+//       '<caption>'+
+//           '<h2>Енкаустика.Загадка Всесвіту</h2>'+
+//       '</caption>'+
+//       '<tr>'+
+//           '<th>№</th>'+
+//           '<th>Назва картини</th>'+
+//           '<th>Місце знаходження</th>'+
+//       '</tr>'+
+//       '<tr ng-repeat="painting in $ctrl.paintings">'+
+//           '<td>{{painting.number}}</td>'+
+//           '<td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>'+
+//           '<td>{{painting.home}}</td>'+
+//       '</tr>'+
+//   '</table>'+
+// '</div>',
+// controller: function PaintingTableController() {
  
-   this.paintings = [
-    {
-     number: 1, //чомусь немає значення формат JSON?чи в "" ,чи без у визначенні об"єкту?
-      name: {
-        foto: "foto/Blakytna_perlyna_Vsesvitu.jpg",
-        title: "Блакитна Перлина Всесвіту"
-      },
-      home: "Лувр(Париж,Франція)",
-    },
-    {
-      number: 2,
-      name: {
-        foto: "foto/Angely.jpg",
-        title: "Ангели"
-      },
-      home: "Національний Музей(Київ,Україна)",
-    },
-    {
-      number: 3,
-      name: {
-        foto: "foto/Velyke_Dyvo_Vsesvitu.jpg",
-        title: "Велике Диво Всесвіту"
-      },
-      home: "Приватна колекція Віри Бондар(Київ,Україна)",
-    },
-    {
-      number: 4,
-      name: {
-        foto: "foto/Znamennya.jpg",
-        title: "Знамення.Імени Божі."
-      },
-      home: "Музей Ватикану(Рим,Італія)",
-    },
-  ];
-  }
-})
+//    this.paintings = [
+//     {
+//      number: 1, //чомусь немає значення формат JSON?чи в "" ,чи без у визначенні об"єкту?
+//       name: {
+//         foto: "foto/Blakytna_perlyna_Vsesvitu.jpg",
+//         title: "Блакитна Перлина Всесвіту"
+//       },
+//       home: "Лувр(Париж,Франція)",
+//     },
+//     {
+//       number: 2,
+//       name: {
+//         foto: "foto/Angely.jpg",
+//         title: "Ангели"
+//       },
+//       home: "Національний Музей(Київ,Україна)",
+//     },
+//     {
+//       number: 3,
+//       name: {
+//         foto: "foto/Velyke_Dyvo_Vsesvitu.jpg",
+//         title: "Велике Диво Всесвіту"
+//       },
+//       home: "Приватна колекція Віри Бондар(Київ,Україна)",
+//     },
+//     {
+//       number: 4,
+//       name: {
+//         foto: "foto/Znamennya.jpg",
+//         title: "Знамення.Імени Божі."
+//       },
+//       home: "Музей Ватикану(Рим,Італія)",
+//     },
+//   ];
+//   }
+// })
 
   .controller('PaintingTableCtrl', function ($scope) {
     $scope.paintings = [
