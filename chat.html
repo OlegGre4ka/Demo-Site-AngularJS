@@ -6,43 +6,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.min.js"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-sanitize.min.js"></script> -->
+    <!--Перепідключаємо angular і супутні модулі через установку npm в node_modules конкретно в наш проект,
+     тепер вони знаходяться локально в нас, тепер непотрібно кожен раз тягнути їх з нету-->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+      
     <script src="main.module.js"></script>
     <!-- модуль компонента "painting-table" обовязково потрібно підключити на цю сторінку,
         незважаючи на те щофункціонально він тут не виконує ніяких дій, інакше Angular не працюватиме -->
     <script src="painting-table/paintingTable.module.js"></script>
+    <!-- Можна підключати тільки модуль компонента,сам component.js можна не підключати -->
     <!-- <script src="painting-table/paintingTable.component.js"></script> -->
-    
+   
 </head>
 
 <body>
 
     <nav class="navbar navbar-default">
-
-        <div class="container-fluid ">
-            <div class="navbar-header ">
-                <a class="navbar-brand" href="#" style="color:gold">DemoAngularJS</a>
-            </div>
-
-            <ul class="nav navbar-nav">
-                <!-- ng-controller="MenuCtrl" - вставити потім в ul -->
-
-                <li><a href="index.html" style="color:#FFD700">Home</a></li>
-                <li class="active">
-                    <a href="chat.html" style="color:#0000FF">Чат</a>
-                </li>
-                <li><a href="#" style="color:gold">Page2</a></li>
-                <li><a href="#" style="color:gold">Page3</a></li>
-            </ul>
+           
             <div ng-include="'./navbar-btn.html'"></div>
-        </div>
             <!-- <confirm-Regchat></confirm-Regchat> -->
-         
+    </nav>
 
     <div>
         <h2>Hello!!Welcome by our chat! Hello!!Welcome by our chat!</h2>

@@ -2,6 +2,31 @@
 .container-fluid{
     background-color:purple;
 }
+
+
+.container-fluid .nav .home:visited,
+.container-fluid .nav .chat:visited,
+.container-fluid .nav .page2:visited,
+.container-fluid .nav .page3:visited{
+    color:#7FFF00;
+    
+}
+
+.container-fluid .nav .home:hover,
+.container-fluid .nav .chat:hover,
+.container-fluid .nav .page2:hover,
+.container-fluid .nav .page3:hover{
+    color:#160FEB;    
+    background-color: #FF5099
+}
+/* :active означає стан лінку саме в момент активізації,натискання,переходу - пока нам це непотрібно */
+/* .container-fluid .nav .home:active,
+.container-fluid .nav .chat:active,
+.container-fluid .nav .page2:active,
+.container-fluid .nav .page3:active{
+background-color: aqua
+} */
+  
 .form-group .col-sm-9 .help-block{
     color:lawngreen;
 }
