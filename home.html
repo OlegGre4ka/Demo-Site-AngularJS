@@ -1,0 +1,31 @@
+<div>
+    
+            <h1>Learning Site from Oleg Suchariev.</h1>
+            <p> <i> This is my first site</i></p>
+            <h2>Вітаю! На цій першій сторінці можна ознайомитись з художньою творчістю мого батька -Сухарєва Євгена Васильовича<br></h2>
+            <h4>А ось щоб потрапити до нашого чату Вам потрібно зареєструватись - кнопка <b>REG</b></h4>
+    
+            <h3 style="color:orangered"> This Painting Table built on ng-controller and HTML-template on view page:</h3>
+        </div>
+            <div ng-controller="PaintingTableCtrl">
+    
+                <table>
+                    <caption>
+                        <h2>Енкаустика.Загадка Всесвіту</h2>
+                    </caption>
+                    <tr>
+                        <th>№</th>
+                        <th>Назва картини</th>
+                        <th>Місце знаходження</th>
+                    </tr>
+                    <tr ng-repeat="painting in paintings">
+                        <td>{{painting.number}}</td>
+                        <td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>
+                        <td>{{painting.home}}</td>
+                    </tr>
+                </table>
+            </div>
+            <h3 style="color:#4400FF"> This Painting Table built on component():</h3>
+    
+            <painting-table></painting-table>
+    

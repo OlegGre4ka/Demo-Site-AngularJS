@@ -1,60 +1,60 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid ">
+        <div class="navbar-header ">
+            <a class="navbar-brand" href="" style="color:gold">DemoAngularJS</a>
+        </div>
 
-<div class="container-fluid ">
-    <div class="navbar-header ">
-        <a class="navbar-brand" href="#" style="color:gold">DemoAngularJS</a>
-    </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/" class="home">Home</a></li>
+            <!-- ng-click="active='home'" пока приберемо кліки з лінків -->
+            <li>
+                <a href="#!/chat" class="chat">Чат</a>
+            </li>
+            <li><a href="#!/page2" class="page2">Page2</a></li>
+            <li><a href="#!/page3" class="page3">Page3</a></li>
+        </ul>
 
-    <ul class="nav navbar-nav">
-        <li ><a href="index.html" class="home">Home</a></li>
-        <!-- ng-click="active='home'" пока приберемо кліки з лінків -->
-        <li>
-            <a href="chat.html" class="chat">Чат</a>
-        </li>
-        <li><a href="page2.html" class="page2">Page2</a></li>
-        <li><a href="page3.html" class="page3">Page3</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ng-controller="ModalDemoCtrl" class="modal-demo">
+                <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button>
 
-    <ul class="nav navbar-nav navbar-right">
-        <li ng-controller="ModalDemoCtrl" class="modal-demo">
-            <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button>
+                <script type="text/ng-template" id="myModalContent.html">
 
-            <script type="text/ng-template" id="myModalContent.html">
-
-                <div class="modal-header">
-                    <button type="button" class="close" aria-label="Close" ng-click="cancel()">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-label="Close" ng-click="cancel()">
                 <span aria-hidden="true">&times;</span>
                     </button>
 
-                    <h3 class="modal-title" id="modal-title">Register please!</h3>
-                </div>
-                <div class="modal-body" id="modal-body">
+                        <h3 class="modal-title" id="modal-title">Register please!</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
 
-                    <form class="form-horizontal" name="regForm" ng-submit="ok()" novalidate>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="regName">Name:</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" name="regName" ng-model="regName" ng-minlength='5' ng-maxlength='20' required placeholder='Write your name here'>
-                                <span ng-show="regForm.regName.$touched && regForm.regName.$invalid" style="color:red">The name for registration is required!</span>
-                                <span ng-show="regForm.regName.$error.minlength" class="help-block">Username is too short.</span>
-                                <span ng-show="regForm.regName.$error.maxlength" class="help-block">Username is too long.</span>
+                        <form class="form-horizontal" name="regForm" ng-submit="ok()" novalidate>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="regName">Name:</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" name="regName" ng-model="regName" ng-minlength='5' ng-maxlength='20' required placeholder='Write your name here'>
+                                    <span ng-show="regForm.regName.$touched && regForm.regName.$invalid" style="color:red">The name for registration is required!</span>
+                                    <span ng-show="regForm.regName.$error.minlength" class="help-block">Username is too short.</span>
+                                    <span ng-show="regForm.regName.$error.maxlength" class="help-block">Username is too long.</span>
+                                </div>
+
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="regSurname">Surname: </label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" name="regSurname" ng-model="regSurname" ng-minlength='5' ng-maxlength='20' required
+                                        placeholder='Write your surname here'>
+                                    <span ng-show="regForm.regSurname.$touched && regForm.regSurname.$invalid" style="color:red">The surname for registration is required!</span>
+                                    <span ng-show="regForm.regSurname.$error.minlength" class="help-block">Username is too short.</span>
+                                    <span ng-show="regForm.regSurname.$error.maxlength" class="help-block">Username is too long.</span>
+                                </div>
 
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="regSurname">Surname: </label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" name="regSurname" ng-model="regSurname" ng-minlength='5' ng-maxlength='20' required
-                                    placeholder='Write your surname here'>
-                                <span ng-show="regForm.regSurname.$touched && regForm.regSurname.$invalid" style="color:red">The surname for registration is required!</span>
-                                <span ng-show="regForm.regSurname.$error.minlength" class="help-block">Username is too short.</span>
-                                <span ng-show="regForm.regSurname.$error.maxlength" class="help-block">Username is too long.</span>
                             </div>
-
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="regPhone">Phone number:</label>
-                            <div class="col-sm-9">
-                                <select ng-model="regPhone"> 
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="regPhone">Phone number:</label>
+                                <div class="col-sm-9">
+                                    <select ng-model="regPhone"> 
                                                 <!--ng-options="code for code in codes">-->
                                                 <!--<option ng-repeat="code in codes">{{code}}</option>-->
                                               <!--Не працює selected!  -->
@@ -63,86 +63,87 @@
                                             <option value="+(48)">+(48)</option>
                                              </select>
 
-                                <input type="number" name="regPhone" value="">
-                                <!--В Мозілі в input type="number"пишуться літери, в гуглі і в опері не пишуться!!-->
-                                <span ng-switch="regPhone">
+                                    <input type="number" name="regPhone" value="">
+                                    <!--В Мозілі в input type="number"пишуться літери, в гуглі і в опері не пишуться!!-->
+                                    <span ng-switch="regPhone">
                                                  <span ng-switch-when="+(380)">Слава Україні!</span>
-                                <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
-                                <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
-                                </span>
+                                    <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
+                                    <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
+                                    </span>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="regEmail">Email: </label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="email" name="regEmail" ng-model="regEmail" required placeholder='Write your email here'>
-                                <span ng-show="regForm.regEmail.$touched && regForm.regEmail.$invalid" style="color:red">Your email for registration is required!</span>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="regEmail">Email: </label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="email" name="regEmail" ng-model="regEmail" required placeholder='Write your email here'>
+                                    <span ng-show="regForm.regEmail.$touched && regForm.regEmail.$invalid" style="color:red">Your email for registration is required!</span>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="regPass">Password: </label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="password" name="regPass" ng-model="regPass" required value="" placeholder='Write your password here'>
-                                <span ng-show="regForm.regPass.$touched && regForm.regPass.$invalid" style="color:red">Enter password for registration is required!</span>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="regPass">Password: </label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="password" name="regPass" ng-model="regPass" required value="" placeholder='Write your password here'>
+                                    <span ng-show="regForm.regPass.$touched && regForm.regPass.$invalid" style="color:red">Enter password for registration is required!</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit" ng-disabled="regForm.$invalid">Submit</button>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" ng-disabled="regForm.$invalid">Submit</button>
 
-                            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-                        </div>
-                    </form>
+                                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </form>
 
-                </div>
+                    </div>
 
-            </script>
-        </li>
+                </script>
+            </li>
 
-        <li ng-controller="ModalLoginCtrl" class="modal-demo">
-            <button type="button" class="btn btn-primary btn-sm navbar-btn" ng-click="open()">Log in</button>
+            <li ng-controller="ModalLoginCtrl" class="modal-demo">
+                <button type="button" class="btn btn-primary btn-sm navbar-btn" ng-click="open()">Log in</button>
 
-            <script type="text/ng-template" id="myModalLoginContent.html">
+                <script type="text/ng-template" id="myModalLoginContent.html">
 
-                <div class="modal-header">
-                    <button type="button" class="close" aria-label="Close" ng-click="cancel()">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-label="Close" ng-click="cancel()">
                 <span aria-hidden="true">&times;</span>
                     </button>
 
-                    <h3 class="modal-title" id="modal-title">Log in and please our chat!</h3>
-                </div>
-                <div class="modal-body" id="modal-body">
+                        <h3 class="modal-title" id="modal-title">Log in and please our chat!</h3>
+                    </div>
+                    <div class="modal-body" id="modal-body">
 
-                    <form class="form-horizontal" name="logForm" ng-submit="ok()" novalidate>
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="logName">Login:</label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="text" name="logName" ng-model="logName" ng-minlength='5' ng-maxlength='20' required placeholder='Write your login here'>
-                                <span ng-show="logForm.logName.$touched && logForm.logName.$invalid" style="color:red">The Login is required!</span>
-                                <!-- <span ng-show="logForm.logName.$error.minlength" class="help-block">Username is too short.</span> -->
-                                <!-- <span ng-show="logForm.logName.$error.maxlength" class="help-block">Username is too long.</span> -->
+                        <form class="form-horizontal" name="logForm" ng-submit="ok()" novalidate>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="logName">Login:</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="text" name="logName" ng-model="logName" ng-minlength='5' ng-maxlength='20' required placeholder='Write your login here'>
+                                    <span ng-show="logForm.logName.$touched && logForm.logName.$invalid" style="color:red">The Login is required!</span>
+                                    <!-- <span ng-show="logForm.logName.$error.minlength" class="help-block">Username is too short.</span> -->
+                                    <!-- <span ng-show="logForm.logName.$error.maxlength" class="help-block">Username is too long.</span> -->
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-sm-3" for="logPass">Password: </label>
-                            <div class="col-sm-9">
-                                <input class="form-control" type="password" name="logPass" ng-model="logPass" required placeholder='Write your password here'>
-                                <span ng-show="logForm.logPass.$touched && logForm.logPass.$invalid" style="color:red">Password is required!</span>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="logPass">Password: </label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" type="password" name="logPass" ng-model="logPass" required placeholder='Write your password here'>
+                                    <span ng-show="logForm.logPass.$touched && logForm.logPass.$invalid" style="color:red">Password is required!</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit" ng-disabled="logForm.$invalid">Submit</button>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" ng-disabled="logForm.$invalid">Submit</button>
 
-                            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-                        </div>
-                    </form>
+                                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </form>
 
-                </div>
+                    </div>
 
-            </script>
-        </li>
-        <li> <button type="button" class="btn btn-danger btn-sm navbar-btn" ng-if="regForm.$invalid || logForm.$invalid">Log out</button></li>
-    </ul>
-</div>
+                </script>
+            </li>
+            <li> <button type="button" class="btn btn-danger btn-sm navbar-btn" ng-if="regForm.$invalid || logForm.$invalid">Log out</button></li>
+        </ul>
+    </div>
+</nav>

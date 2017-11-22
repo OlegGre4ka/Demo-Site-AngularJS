@@ -1,11 +1,33 @@
 'use strict';
 
 angular.
-module('myApp', ['ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTable'])
+module('myApp', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTable'])
 // 'paintingTable' - підключити в []коли буду виносити в окремий модуль
   // Другим аргументом в модулі ми передаємо масив залежностей:[angular-animate.js - 'ngAnimate',angular-sanitize.js-'ngSanitise' ,angular-ui-bootstrap - 'ui.bootstrap']
 
-
+  .config(function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
+    
+    $routeProvider
+     .when('/', {
+    templateUrl: 'home.html'
+    })
+    .when('/chat',{
+    templateUrl:'chat.html'
+    })
+    .when('/page2',{
+      // Увага!!!Не може одночасно, в одному методі when() прописуватись і template і  templateUrl!!!
+      // Або те , або те!!!При чому якщо прописано обидва то грузить template, незалежно першим стоїть чи другим по порядку
+    //template:'<h1 style="color:aqua">Routing for page2.html working!</h1>',
+    templateUrl:'page2.html'
+    })
+    .when('/page3',{
+    templateUrl:'page3.html',
+   // template:'<h2 style="color:green">Routing for page3.html working!</h2>',
+    
+    })
+    . otherwise('/')
+  }) 
   .controller('MenuCtrl', function ($scope) {//підключити $location коли буду виносити все меню
     $scope.confirmRegchat = function () {
       confirm('Щоб мати змогу користуватись нашим чатом - зареєструйтесь (кнопка REG),' +
