@@ -9,9 +9,12 @@ module('myApp', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTa
     $locationProvider.hashPrefix('!');
     
     $routeProvider
-     .when('/', {
-    templateUrl: 'home.html'
-    })
+    //  .when('/', {
+    // templateUrl: 'home.html'
+    // })
+    .when('/',{
+      templateUrl:'painting_seva.html'
+      })
     .when('/chat',{
     templateUrl:'chat.html'
     })
@@ -23,38 +26,11 @@ module('myApp', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTa
     })
     .when('/page3',{
     templateUrl:'page3.html',
-   // template:'<h2 style="color:green">Routing for page3.html working!</h2>',
     
     })
     . otherwise('/')
   }) 
-  .controller('MenuCtrl', function ($scope) {//підключити $location коли буду виносити все меню
-    $scope.confirmRegchat = function () {
-      confirm('Щоб мати змогу користуватись нашим чатом - зареєструйтесь (кнопка REG),' +
-        "а якщо ви зареєстровані введіть Логін і Пароль(кнопка Log in) - і...Шалом, чатери! Что новенького на Плюке?")
-    };
-
-    // $scope.isActive = function (viewLocation) {
-
-    //     var active=(viewLocation === $location.path());
-    //     return active;
-    //  }     
-    //  $scope.isActive = function () {
-
-    //     return path();
-    //  }     
-  })
-  //Функція confirmRegchat() контролера спрацьовує, коли вже перебуваєш на сайті і хочеш перейти на сторінку "Чат",
-  //директива confirmRegchat зпрацює якщо зайти на сторінку "Чат" одразу
-  // .directive('confirmRegchat', function () {
-  //   return {
-  //     link: function (scope, element, attrs) {
-  //       console.log('confirmRegchat directive working!!'),
-  //         confirm('Щоб мати змогу користуватись нашим чатом - зареєструйтесь (кнопка REG),' +
-  //           "а якщо ви зареєстровані введіть Логін і Пароль(кнопка Log in) - і...Шалом, чатери! Что новенького на Плюке?")
-  //     }
-  //   }
-  // })
+ 
   //Далі: контролери модальних вікон взято з Angular UI-Bootstrap і адаптовано
 
   .controller('ModalDemoCtrl', function ($scope, $uibModal, $log, $document) {
@@ -185,64 +161,7 @@ module('myApp', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTa
       $uibModalInstance.dismiss('cancel');
     };
   })
-  // компонент закоментовано, бо винесено в окремий модуль 'paintingTable', потім видалю
-// .component('paintingTable',
-// {
-//   template:'<div>'+
-//   '<table>'+
-//       '<caption>'+
-//           '<h2>Енкаустика.Загадка Всесвіту</h2>'+
-//       '</caption>'+
-//       '<tr>'+
-//           '<th>№</th>'+
-//           '<th>Назва картини</th>'+
-//           '<th>Місце знаходження</th>'+
-//       '</tr>'+
-//       '<tr ng-repeat="painting in $ctrl.paintings">'+
-//           '<td>{{painting.number}}</td>'+
-//           '<td><a ng-href="{{painting.name.foto}}" target="_blank">{{painting.name.title}}</a></td>'+
-//           '<td>{{painting.home}}</td>'+
-//       '</tr>'+
-//   '</table>'+
-// '</div>',
-// controller: function PaintingTableController() {
  
-//    this.paintings = [
-//     {
-//      number: 1, //чомусь немає значення формат JSON?чи в "" ,чи без у визначенні об"єкту?
-//       name: {
-//         foto: "foto/Blakytna_perlyna_Vsesvitu.jpg",
-//         title: "Блакитна Перлина Всесвіту"
-//       },
-//       home: "Лувр(Париж,Франція)",
-//     },
-//     {
-//       number: 2,
-//       name: {
-//         foto: "foto/Angely.jpg",
-//         title: "Ангели"
-//       },
-//       home: "Національний Музей(Київ,Україна)",
-//     },
-//     {
-//       number: 3,
-//       name: {
-//         foto: "foto/Velyke_Dyvo_Vsesvitu.jpg",
-//         title: "Велике Диво Всесвіту"
-//       },
-//       home: "Приватна колекція Віри Бондар(Київ,Україна)",
-//     },
-//     {
-//       number: 4,
-//       name: {
-//         foto: "foto/Znamennya.jpg",
-//         title: "Знамення.Імени Божі."
-//       },
-//       home: "Музей Ватикану(Рим,Італія)",
-//     },
-//   ];
-//   }
-// })
 
   .controller('PaintingTableCtrl', function ($scope) {
     $scope.paintings = [
@@ -280,4 +199,5 @@ module('myApp', ['ngRoute','ngAnimate', 'ngSanitize', 'ui.bootstrap','paintingTa
       },
     ]
   })
+
 

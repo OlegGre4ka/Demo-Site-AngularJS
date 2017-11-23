@@ -1,10 +1,14 @@
+/* .navbar-fixed-bottom, */
 
-.container-fluid{
+.nav-purple 
+{
     background-color:purple;
+    /* background-color:#008011; */
+    
 }
 
 
-.container-fluid .nav .home:visited,
+.container-fluid .nav .painting:visited,
 .container-fluid .nav .chat:visited,
 .container-fluid .nav .page2:visited,
 .container-fluid .nav .page3:visited{
@@ -12,7 +16,7 @@
     
 }
 
-.container-fluid .nav .home:hover,
+.container-fluid .nav .painting:hover,
 .container-fluid .nav .chat:hover,
 .container-fluid .nav .page2:hover,
 .container-fluid .nav .page3:hover{
@@ -58,6 +62,20 @@ table td {
     border-bottom:peru 2px solid;
     padding: 10px;
 }
-/* .nav .active{
- color:#0000FF"
-} */
+.thumb{
+    float: left;
+    border: 2px solid aqua;
+    border-radius: 15px;
+    margin:5px;
+    background-color: lightgrey;
+}
+#scrollArea {
+    display: block;    
+    height: 600px;
+    overflow: scroll;
+  }
+ .copy{
+     color:#805E00;
+     font-size: 24px
+ } 
+ 
