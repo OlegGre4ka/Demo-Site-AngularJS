@@ -1,9 +1,9 @@
-/* .navbar-fixed-bottom, */
-
-.nav-purple 
+body{
+    /* background-image: url('foto/incognito.jpg') */
+}
+.nav-color 
 {
-    background-color:purple;
-    /* background-color:#008011; */
+    background-color:lightgrey;
     
 }
 
@@ -12,8 +12,8 @@
 .container-fluid .nav .chat:visited,
 .container-fluid .nav .page2:visited,
 .container-fluid .nav .page3:visited{
-    color:#7FFF00;
-    
+   
+    color:#055510 
 }
 
 .container-fluid .nav .painting:hover,
@@ -21,7 +21,6 @@
 .container-fluid .nav .page2:hover,
 .container-fluid .nav .page3:hover{
     color:#160FEB;    
-    background-color: #FF5099
 }
 /* :active означає стан лінку саме в момент активізації,натискання,переходу - пока нам це непотрібно */
 /* .container-fluid .nav .home:active,
@@ -53,15 +52,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
-table{
 
-    border-collapse: collapse;
-}
-table th,
-table td {
-    border-bottom:peru 2px solid;
-    padding: 10px;
-}
 .thumb{
     float: left;
     border: 2px solid aqua;
@@ -69,13 +60,24 @@ table td {
     margin:5px;
     background-color: lightgrey;
 }
-#scrollArea {
-    display: block;    
-    height: 600px;
-    overflow: scroll;
-  }
+.img-opacity:hover{
+    opacity: 0.7;
+}
+/* в наступних двох правилвх прописано scroll без полоси прокрутки,"невидимий скрол" */
+  #scrollArea{
+    width: 830px;
+    overflow: hidden;
+    border: 1px solid none;
+}
+.scroll-target {
+    width: 850px;
+    height: 900px;
+    overflow: auto;
+}
  .copy{
-     color:#805E00;
+     /* color:#805E00; */
+    color:#055510 ; 
      font-size: 24px
  } 
- 
+ #title_seva{text-indent: 100px}
+

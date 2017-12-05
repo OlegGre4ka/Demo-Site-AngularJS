@@ -1,23 +1,20 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid nav-purple">
+    <div class="container-fluid nav-color">
         <div class="navbar-header ">
-            <a class="navbar-brand" href="" style="color:gold">DemoAngularJS</a>
+            <a class="navbar-brand" href="/" style="color:#055510">Картини Євгена Сухарєва</a>
         </div>
 
-        <ul class="nav navbar-nav">
-            <!-- <li><a href="/" class="home">Home</a></li> -->
-            <li class="active"><a href="/" class="painting">Картини Євгена Сухарєва</a></li>
+        <ul class="nav navbar-nav navbar-right">
             
-            <li>
+            <!-- <li>
                 <a href="#!/chat" class="chat">Чат</a>
-            </li>
-            <li><a href="#!/page2" class="page2">Page2</a></li>
+            </li> -->
+            <li><a href="#!/vystavky" class="page2">Виставки</a></li>
             <li><a href="#!/page3" class="page3">Page3</a></li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li ng-controller="ModalDemoCtrl" class="modal-demo">
-                <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button>
+           <!-- <!-- <li ng-controller="ModalDemoCtrl" class="modal-demo"> -->
+                <!-- <button type="button" class="btn btn-success  btn-sm navbar-btn" ng-click="open()">REG</button> 
 
                 <script type="text/ng-template" id="myModalContent.html">
 
@@ -59,14 +56,14 @@
                                                 <!--ng-options="code for code in codes">-->
                                                 <!--<option ng-repeat="code in codes">{{code}}</option>-->
                                               <!--Не працює selected!  -->
-                                            <option value="+(380)" selected>+(380)</option>
+                                         <!--   <option value="+(380)" selected>+(380)</option>
                                             <option value="+(375)">+(375)</option>
                                             <option value="+(48)">+(48)</option>
                                              </select>
 
                                     <input type="number" name="regPhone" value="">
                                     <!--В Мозілі в input type="number"пишуться літери, в гуглі і в опері не пишуться!!-->
-                                    <span ng-switch="regPhone">
+                                  <!--  <span ng-switch="regPhone">
                                                  <span ng-switch-when="+(380)">Слава Україні!</span>
                                     <span ng-switch-when="+(375)">Жыве Беларусь!!</span>
                                     <span ng-switch-when="+(48)">Jeszcze Polska nie zginęła!</span>
@@ -99,11 +96,10 @@
                     </div>
 
                 </script>
-            </li>
-
-            <li ng-controller="ModalLoginCtrl" class="modal-demo">
-                <button type="button" class="btn btn-primary btn-sm navbar-btn" ng-click="open()">Log in</button>
-
+            </li>-->
+            
+         <!--  <li ng-controller="ModalLoginCtrl" class="modal-demo">
+                <a href="" class="btn btn-primary btn-sm navbar-btn" ng-click="open()">Log in</button>
                 <script type="text/ng-template" id="myModalLoginContent.html">
 
                     <div class="modal-header">
@@ -123,7 +119,7 @@
                                     <span ng-show="logForm.logName.$touched && logForm.logName.$invalid" style="color:red">The Login is required!</span>
                                     <!-- <span ng-show="logForm.logName.$error.minlength" class="help-block">Username is too short.</span> -->
                                     <!-- <span ng-show="logForm.logName.$error.maxlength" class="help-block">Username is too long.</span> -->
-                                </div>
+                            <!--   </div>
                             </div>
 
                             <div class="form-group">
@@ -143,8 +139,8 @@
                     </div>
 
                 </script>
-            </li>
-            <li> <button type="button" class="btn btn-danger btn-sm navbar-btn" ng-if="regForm.$invalid || logForm.$invalid">Log out</button></li>
+            </li>-->
+            <!-- <li> <button type="button" class="btn btn-danger btn-sm navbar-btn" ng-if="regForm.$invalid || logForm.$invalid">Log out</button></li> -->
         </ul>
     </div>
 </nav>
