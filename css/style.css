@@ -1,6 +1,6 @@
-body{
-    /* background-image: url('foto/incognito.jpg') */
-}
+/* body{
+    background-image: url('/foto/enkavstika/incognito.jpg')
+} */
 .nav-color 
 {
     background-color:lightgrey;
@@ -39,19 +39,7 @@ background-color: aqua
 #modal-title{
     color:green;
 }
-/*нижчеприведений сніпет(10-16) дозволяє прибрати стрілочки в полі input type="number",
- в модальному вікні при введенні номеру телефону вони зайві і недоречні*/
 
-input[type='number'] {
-    -moz-appearance: textfield;
-    
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
 
 .thumb{
     float: left;
@@ -60,9 +48,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin:5px;
     background-color: lightgrey;
 }
-.img-opacity:hover{
+/* .img-opacity:hover{
     opacity: 0.7;
-}
+} */
 /* в наступних двох правилвх прописано scroll без полоси прокрутки,"невидимий скрол" */
   #scrollArea{
     width: 830px;
@@ -81,3 +69,4 @@ input[type=number]::-webkit-outer-spin-button {
  } 
  #title_seva{text-indent: 100px}
 
+ 

@@ -1,18 +1,21 @@
 'use strict';
 
-angular.
-  module('paintingTable')
+angular
+.module('paintingTable')
   .component('paintingTable', {
-   
+
     templateUrl: 'components/painting-table/paintingTable.template.html',
 
     controller: function PaintingListController() {
       console.log('component PaintingList available! ');
-      this.paintings = [
+      var vm = this;
+
+      vm.paintings = [
         {
           id: 'Incognito',
           imageUrl: "foto/enkavstika/incognito.jpg",
-          title: "Інкогніто"
+          title: "Інкогніто",
+
         },
         {
           id: 'Kruh zagadki Malevicha',
@@ -62,6 +65,24 @@ angular.
           title: "Спокуса(Різьба по дереву)"
         },
 
-      ] 
-  },
+      ];
+
+      vm.myModal = document.getElementById('myModal');
+
+      vm.isModal = false;
+      vm.selectedModelItem = {};
+
+      vm.showModal = function (item) {
+        vm.selectedModelItem = item;
+        vm.isModal = true;
+        vm.myModal.style.display = "block";
+        console.log('showModal() function working!')
+
+      }
+      vm.closeModal = function () {
+        vm.isModal = false;
+        vm.selectedModelItem = {};
+        vm.myModal.style.display = "none";
+      }
+    },
   })

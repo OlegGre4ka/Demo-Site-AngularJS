@@ -4,43 +4,34 @@
         <h2 style="color:#E09FC0">Енкавстика.Загадка Всесвіту</h2>
     </div>
     <div id="scrollArea">
-        <ul class="scroll-target" >
+        <ul class="list-group scroll-target">
 
-            <li ng-repeat="painting in $ctrl.paintings" class="thumb">
+            <li ng-repeat="item in $ctrl.paintings" class="list-group-item thumb">
                 <div class="col-md-5">
-
-                    <a ng-href="{{painting.imageUrl}}">
-        <img ng-src="{{painting.imageUrl}}" class="img-thumbnail img-opacity" alt={{painting.title}}>
-    </a>
+                    <!-- <a ng-href="#"> Увага!! не потрібно лінк, модальне вікно виводить ng-click в img!!!-->
+        <img id="myImg" ng-src="{{item.imageUrl}}" ng-click="$ctrl.showModal(item)" class="img-thumbnail img-opacity" alt="{{item.title}}">
+   <!-- Ширину і висоту можна задати через змінні width='{{item.width}}' i height="{{item.height}}",
+відповідно задавши їх в масиві paintings в component() -->
+    <!-- </a> -->
                 </div>
                 <div class="col-md-7">
-                    <p>
                         <!-- <a ng-href="#"> -->
-                        <h3> {{painting.title}} </h3>
+                        <h3> {{item.title}} </h3>
                         <!-- </a> -->
-                    </p>
                 </div>
-                <!-- <script type="text/ng-template" id="ModalPaintingContent.html">
-
-                        <div class="modal-demo modal-lg">
-
-                            <div class="modal-header">
-                                <button type="button" class="close" aria-label="Close" ng-click="cancel()">
-                                <span aria-hidden="true">&times;</span>
-                                    </button>
-
-                                <h3 ng-repeat="painting in paintings| filter:{order:{{x}}}" class="modal-title" id="modal-title">{{painting.title }}</h3>
-                            </div>
-                            <div class="modal-body" id="modal-body">
-                                <img ng-repeat="painting in paintings| filter:{order:2}" class="modal-title" id="modal-title" ng-src='{{painting.imageUrl}}'>
-
-                            </div>
-                        </div>
-
-                    </script> -->
-                <!-- </div> -->
             </li>
         </ul>
-    </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal" ng-show="$ctrl.isModal">
+            <span class="close" ng-click="$ctrl.closeModal()">&times;</span>
+            <div class="modal-content">
+                <img src="{{$ctrl.selectedModelItem.imageUrl}}">
+                <div class="modal-footer">
+                    <h3 id="caption">{{$ctrl.selectedModelItem.title}}</h3>
+                </div>
+            </div>
 
+        </div>
+
+    </div>
 </div>
